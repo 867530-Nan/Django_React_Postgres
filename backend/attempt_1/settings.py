@@ -23,9 +23,11 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SECRET_KEY = 'wc%gf+uo=1)y546&9*@b$_$e=3v=q%@(#gzbf%lp#@-xzws9b$'
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = True
+DEBUG = False
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ["*"]
+
+CSRF_COOKIE_SECURE = False
 
 
 # Application definition
@@ -128,3 +130,4 @@ USE_TZ = True
 STATIC_URL = '/static/'
 
 CORS_ORIGIN_ALLOW_ALL = True
+CSRF_COOKIE_SECURE = False

@@ -17,3 +17,10 @@ class WordType(models.Model):
 
     def __str__(self):
         return self.token
+
+
+class Document(models.Model):
+    print("this is the models thing")
+    title = models.CharField(max_length=200, blank=True)
+    document = models.FileField()
+    uploaded_at = models.DateTimeField(auto_now_add=True)

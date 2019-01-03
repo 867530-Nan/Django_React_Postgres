@@ -7,12 +7,48 @@ from rest_framework.generics import (
 )
 from n_grams.models import (
     WordType,
-    CharacterType
+    CharacterType,
+    Document
 )
 from n_grams.api.serializers import (
     WordSerializer,
-    CharacterSerializer
+    CharacterSerializer,
+    UploadSerializer
 )
+
+from django.shortcuts import render, redirect
+
+from .forms import DocumentForm
+
+
+class AllUploads(ListAPIView):
+    print("get them all")
+    queryset = Document.objects.all()
+    serializer_class = UploadSerializer
+
+
+class UploadText(CreateAPIView):
+    queryset = Document.objects.all()
+    serializer_class = UploadSerializer
+
+
+class ReadUpload(RetrieveAPIView):
+    queryset = Document.objects.all()
+    serializer_class = UploadSerializer
+
+# def model_form_upload(request):
+#     print("asdfasdfasdfasd")
+#     print(request.method)
+#     if request.method == 'POST':
+#         form = DocumentForm(request.POST, request.FILES)
+#         if form.is_valid():
+#             form.save()
+#             return redirect('home')
+#     else:
+#         form = DocumentForm()
+#     return render(request, 'forms/model_form_upload.html', {
+#         'form': form
+#     })
 
 
 class WordListView(ListAPIView):
