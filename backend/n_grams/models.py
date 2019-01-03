@@ -9,7 +9,7 @@ class CharacterType(models.Model):
     frequency = models.FloatField()
 
     def __str__(self):
-        return self.title
+        return self.token
 
 
 class WordType(models.Model):
@@ -18,4 +18,4 @@ class WordType(models.Model):
     frequency = models.FloatField()
 
     def __str__(self):
-        return self.title
+        return self.token
