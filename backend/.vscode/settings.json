@@ -1,0 +1,8 @@
+{
+  "git.ignoreLimitWarning": true,
+  "python.linting.pylintEnabled": false,
+  "python.linting.enabled": false,
+  "python.linting.pep8Enabled": true,
+  "python.pythonPath": "env/bin/python3",
+  "python.venvPath": "env/bin/python3"
+}
