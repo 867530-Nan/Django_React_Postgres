@@ -3,13 +3,19 @@ from django.db import models
 # Create your models here.
 
 
-class CharacterTypes(models.Model):
+class CharacterType(models.Model):
     vector = models.IntegerField()
     token = models.CharField(max_length=200)
     frequency = models.FloatField()
 
+    def __str__(self):
+        return self.title
 
-class WordTypes(models.Model):
+
+class WordType(models.Model):
     vector = models.IntegerField()
     token = models.CharField(max_length=200)
     frequency = models.FloatField()
+
+    def __str__(self):
+        return self.title
