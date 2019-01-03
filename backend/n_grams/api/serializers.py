@@ -9,7 +9,7 @@ class WordSerializer(serializers.ModelSerializer):
         fields = ('token', 'vector', 'frequency')
 
 
-class Serializer(serializers.ModelSerializer):
+class CharacterSerializer(serializers.ModelSerializer):
     class Meta:
         model = CharacterType
         fields = ('token', 'vector', 'frequency')

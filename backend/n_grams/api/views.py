@@ -5,8 +5,14 @@ from rest_framework.generics import (
     DestroyAPIView,
     UpdateAPIView
 )
-from n_grams.models import WordType
-from n_grams.api.serializers import WordSerializer
+from n_grams.models import (
+    WordType,
+    CharacterType
+)
+from n_grams.api.serializers import (
+    WordSerializer,
+    CharacterSerializer
+)
 
 
 class WordListView(ListAPIView):
@@ -32,3 +38,28 @@ class WordDestroyView(DestroyAPIView):
 class WordUpdateView(UpdateAPIView):
     queryset = WordType.objects.all()
     serializer_class = WordSerializer
+
+
+class CharacterListView(ListAPIView):
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterSerializer
+
+
+class CharacterCreateView(CreateAPIView):
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterSerializer
+
+
+class CharacterRetrieveView(RetrieveAPIView):
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterSerializer
+
+
+class CharacterDestroyView(DestroyAPIView):
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterSerializer
+
+
+class CharacterUpdateView(UpdateAPIView):
+    queryset = CharacterType.objects.all()
+    serializer_class = CharacterSerializer
